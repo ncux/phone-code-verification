@@ -1,0 +1,25 @@
+{
+  "name": "download",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^2.0.1",
+    "crypto": "^1.0.1",
+    "koa": "^2.6.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "koa2-cors": "^2.0.6",
+    "mongoose": "^5.3.8",
+    "qcloudsms_js": "^0.1.1",
+    "redis": "^2.8.0",
+    "request": "^2.88.0"
+  }
+}

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="styles/bootstrap4-hello-world.min.css" rel="stylesheet">
+    <title>手机号码验证</title>
+</head>
+<body>
+
+<div class="container-fluid ml-2 mt-5">
+
+    <div class="row mx-auto align-items-center align-content-center">
+
+        <div class="col-3 mx-auto align-items-center align-content-center">
+
+            <div class="form-group">
+                <label for="phoneNumber">手机号</label>
+                <input id="phoneNumber" name="phoneNumber" class="form-control-sm">
+            </div>
+
+            <button id="sendSMScode" class="btn btn-sm btn-info my-3">发送验证码</button>
+
+            <div class="form-group mt-5">
+                <label for="smsCode">验证码</label>
+                <input id="smsCode" name="smsCode" class="form-control-sm">
+            </div>
+
+            <button id="confirmCode" class="btn btn-sm btn-info my-3">确认</button>
+            <br>
+            <ul class="list-group mt-4" style="width: 50%">
+                <li class="list-group-item list-group-item-action  my-1">
+                    <details>
+                        <summary>
+                            iFIX
+                        </summary>
+                        <ul>
+                            <li class="items">iFIX5.9.ISO</li>
+                            <li class="items">iFIX6.0.ISO</li>
+                        </ul>
+                    </details>
+
+                </li>
+
+                <li class="list-group-item list-group-item-action  my-1">
+                    <details>
+                        <summary>
+                            Historian
+                        </summary>
+                        <ul>
+                            <li class="items">Historian7.0.ISO</li>
+                            <li class="items"><a id="downloadLink" target="_blank">centos.iso</a></li>
+                        </ul>
+                    </details>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<script src="scripts/phone-code-handler.js"></script>
+</body>
+</html>

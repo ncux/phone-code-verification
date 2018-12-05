@@ -1,0 +1,17 @@
+{
+    "port": 4545,
+    "redis": {
+        "host": "127.0.0.1",
+        "port": 6379,
+        "password": "ziv",
+        "db": 1
+    },
+    "mongodb": "mongodb://ziv:ziv@127.0.0.1:27017/test",
+    "sms": {
+        "appId": 1400139346,
+        "appKey": "c669a6c9534350ba2607a1a509b55254",
+        "templateId": 194147,
+        "smsSign": "上海时庐智能科技"
+    },
+    "foreignUrl": "www.foreign.com/download"
+}

@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>index</title>
+<script src="jquery-3.3.1.min.js"></script>
+<script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+<script src="tree.jquery.js"></script>
+<script type="text/javascript">
+  var data = [
+    {
+        name: 'iFIX',
+        children: [
+            { name: 'iFIX5.9.ISO' },
+            { name: 'iFIX6.0.ISO' }
+        ]
+    },
+    {
+        name: 'Historian',
+        children: [
+            { name: 'Historian7.0.ISO' }
+        ]
+    }
+  ];
+  $(function() {
+      $('#tree1').tree({
+          data: data
+      });
+  });
+
+  $('#tree1').on(
+      'tree.click',
+      event => {
+          // The clicked node is 'event.node'
+          var node = event.node;
+          alert(node.name);
+      }
+  );
+  $("#sendCode").click(function()
+   {
+    $.ajax({
+      url: "addStudents.do",//要请求的服务器url
+      //这是一个对象，表示请求的参数，两个参数：method=ajax&val=xxx，服务器可以通过request.getParameter()来获取
+      //data:{method:"ajaxTest",val:value},
+      data: {
+          name: $("#name").val(),
+          studentId: $("#studentId").val(),
+      },
+      async: true,   //是否为异步请求
+      cache: false,  //是否缓存结果
+      type: "POST", //请求方式为POST
+      dataType: "json",   //服务器返回的数据是什么类型
+      success: function(result){  //这个方法会在服务器执行成功是被调用 ，参数result就是服务器返回的值(现在是json类型)
+          if(result){
+              alert("true");
+          }else{
+              alert("false");
+          }
+      }
+      });
+    });
+    $("#writeCode").click(function()
+    {
+      alert("clicked");
+    });
+</script>
+</head>
+<body>
+
+<form class="addSud" method="post" action="">
+  <table>
+  <tr>
+  <td class="textRight">手机号</td>
+
+  <td colspan="2"><input type="text" id="name" name="name"></td>
+  <td colspan="5"><input type="submit" id="sendCode" value="发送验证码"></td>
+  <td class="textRight">验证码</td>
+  <td colspan="2"><input type="text" id="studentId" name="studentId"></td>
+  <td colspan="5"><button type="button" id="writeCode">确认</button></td>
+  </tr>
+
+</table>
+</form>
+<div id="tree1"></div>
+</body>
+</html>
